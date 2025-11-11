@@ -227,6 +227,11 @@ def process_image(
             
             result_text = outputs[0].outputs[0].text
 
+            # Remove special end-of-sentence token from result
+            result_text = result_text.replace("<｜end▁of▁sentence｜>", "")
+
+            # print(f"\n\n{result_text}\n\n")
+
             # Save result as PNG metadata
             metadata = PngImagePlugin.PngInfo()
             
