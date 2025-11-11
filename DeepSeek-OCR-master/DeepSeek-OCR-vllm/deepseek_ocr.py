@@ -135,7 +135,7 @@ class DeepseekOCRDummyInputsBuilder(
         if '<image>' in PROMPT:
             return {
                 "image":
-                DeepseekOCRProcessor().tokenize_with_images(images = self._get_dummy_images(width=max_image_size.width,
+                DeepseekOCRProcessor().tokenize_with_images(conversation = PROMPT, images = self._get_dummy_images(width=max_image_size.width,
                                     height=max_image_size.height,
                                     num_images=num_images), bos=True, eos=True, cropping=CROP_MODE)
             }

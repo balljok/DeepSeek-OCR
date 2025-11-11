@@ -258,7 +258,7 @@ def process_page(
         "prompt": prompt,
         "multi_modal_data": {
             "image": processor.tokenize_with_images(
-                images=[image], bos=True, eos=True, cropping=CROP_MODE
+                conversation=prompt, images=[image], bos=True, eos=True, cropping=CROP_MODE
             )
         },
     }
